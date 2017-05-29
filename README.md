@@ -1,11 +1,11 @@
 # COM1008-Web-Assignment
 
-FINAL MARK | 77 | 80
---- | --- | --- 
-**Stage 1: Planning and design document** | 8 | 10
-**Stage 2: Website**|  |
-<ul><li>Look and Feel and RWD</li><li>HTML</li><li>CSS</li><li>JavaScript and Canvas</li><ul>|<ul><li>15</li><li>15</li><li>15</li><li>14</li><ul> | <ul><li>15</li><li>15</li><li>15</li><li>15</li><ul>
-**Stage 3: Development and testing document** | 10 | 10
+| FINAL MARK | 77 | 80 |
+| --- | ---: | ---: |
+| **Stage 1: Planning and design document** | 8 | 10 |
+| **Stage 2: Website** | | |
+| <ul><li>Look and Feel and RWD</li><li>HTML</li><li>CSS</li><li>JavaScript and Canvas</li><ul> | <ul><li>15</li><li>15</li><li>15</li><li>14</li><ul> | <ul><li>15</li><li>15</li><li>15</li><li>15</li><ul> |
+| **Stage 3: Development and testing document** | 10 | 10 |
 
 **Overall**
 ---
