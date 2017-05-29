@@ -1,0 +1,367 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*------------------CSS template for all pages------------------*/
+body {
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f2fff5;
+  margin: 0;
+}
+
+header {
+  background-color: white;
+}
+
+main {
+  padding: 0;
+}
+
+/* Company logo without name (globe) on mobile display */
+header #mobile_logo {
+  text-align: center;
+  padding: 12px 0;
+}
+
+/*--------------------Menu button on mobile--------------------*/
+#mobile_menu_button {
+  /* Make the menu button fixed at top left corner as the user scrolls */
+  position: fixed;
+  top: 40px;
+  left: -14px;
+  border-radius: 7px;
+  border-style: none;
+  color: white;
+  background: #12A138;
+  font-size: 20px;
+  padding: 20px 10px;
+}
+
+#mobile_menu_button img {
+  /* Adjust hamburger icon relative to its original position*/
+  position: relative;
+  top: 3px;
+  left: -3px;
+  padding-right: 3px;
+}
+
+/*------------------Off-canvas menu on mobile------------------*/
+#mobile_menu_overlay {
+  /* Make the overlay cover whole page */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2; /* Higher stack order than body but lower than the menu */
+  background-color: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s; /* darken the background when the menu is out*/
+}
+
+#mobile_menu {
+  position: fixed; /* Make the menu's position fixed as the user scrolls*/
+  top: 0;
+  left: 0;
+  z-index: 3; /* Make the menu become top stack order */
+  height: 100%;
+  width: 0%; /* The menu is initially hidden */
+  background-color: #12A138;
+  transition: 0.5s; /* 0.5s to slide the menu */
+  overflow-y: auto; /* Able to scroll the menu vertically when overflow*/
+}
+
+#mobile_menu ul {
+  /* Make the list slide with the menu */
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  padding: 0;
+}
+
+#mobile_menu ul li a {
+  /* Adjust the postition of the list item*/
+  display: block;
+  padding: 16px 18px;
+  width: 100%;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#mobile_menu #close_button {
+  /* Top right corner of the menu */
+  position: absolute;
+  top: 5px;
+  right: 23px;
+  font-size: 36px;
+  color: white;
+}
+
+#mobile_menu .menu_icon {
+  margin: 0 10px -5px 0;
+}
+
+/*---------------------Footer on all page----------------------*/
+footer {
+  /* Make the footer stay at the bottom*/
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+footer #footer_logo {
+  padding: 20px;
+}
+
+footer .footer_nav {
+  margin: 0;
+  padding: 5px 0;
+}
+
+footer .footer_nav li {
+  display: inline;
+}
+
+footer .footer_nav li .footer_link {
+  display: inline-block;
+  padding: 0 5px;
+  color: #545354;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer .footer_nav .footer_link:hover {
+  /* Zoom the text and move the surrounding texts*/
+  margin: 0 40px;
+  color: #12A138;
+  transform: scale(2.1);
+}
+
+footer #footer_copyright {
+  font-size: 16px;
+  padding: 15px;
+  margin: 0;
+}
+
+/*-------------------------Media rules-------------------------*/
+/* Hide the desktop menu on mobile display */
+#desktop_menu {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  /* Hide all mobile elements */
+  #mobile_logo, #mobile_menu_overlay, #mobile_menu_button, #mobile_menu {
+    display: none;
+  }
+
+  /*---------------Horizontal menu---------------*/
+  /* Display the desktop menu */
+  #desktop_menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+
+  #desktop_menu table {
+    /* Customization */
+    background-color: #12A138;
+    border-collapse: collapse;
+    box-shadow: 0px 4px 19px 1px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  /* Full logo to be shown on the top left corner inside the menu */
+  #desktop_menu table tr .logo_box {
+    background-color: white;
+    padding: 5px;
+    border: none;
+  }
+
+  #desktop_menu table tr .logo_box #full {
+    display: block;
+    position: relative;
+    top: 3px;
+    max-width: 95px;
+    max-height: 101px;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /*------To be displayed when screen width > 1200------*/
+  #desktop_menu table tr .logo_box #globe {
+    display: none;
+  }
+
+  #desktop_menu table tr .logo_box #word {
+    display: none;
+  }
+
+  /*----------------------------------------------*/
+  #desktop_menu table tr td {
+    width: 12.5%;
+    padding: 5px;
+    border-left: 2px dashed white;
+  }
+
+  #desktop_menu table tr td .vertical_align {
+    position: relative;
+    top: 5px;
+  }
+
+  /* Only show menu icon */
+  #desktop_menu table tr td .desc {
+    display: none;
+  }
+
+  #desktop_menu table tr td a {
+    /* Resize the text will get smaller when browser width changes*/
+    display: inline-block;
+    width: 100%; /* Make the link clickable in whole cell */
+    height: 100%; /* Make the link clickable in whole cell */
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  #desktop_menu table tr td a:hover {
+    /* Slightly zoom in effect */
+    transform: scale(1.2, 1.2);
+  }
+
+  /* Lower transform scale of logo to prevent overflow*/
+  #desktop_menu table tr td #desktop_logo:hover {
+    transform: scale(1.1, 1.1);
+  }
+
+  #space {
+    /* Create a space with same height as the desktop menu*/
+    width: 100%;
+    height: 109px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /*---------------Horizontal menu---------------*/
+  /* Adjust the menu bar */
+  #desktop_menu table tr td {
+    width: 12%;
+  }
+
+  /* Increase width for recommendation element as the text is longer*/
+  #desktop_menu table tr .longer {
+    width: 16%;
+  }
+
+  #desktop_menu table tr td .vertical_align {
+    position: relative;
+    top: 5px;
+  }
+
+  #desktop_menu table tr td .menu_icon {
+    height: 25px;
+    width: 25px;
+  }
+
+  /* Display the icon with text */
+  #desktop_menu table tr td .desc {
+    display: inline;
+    font-size: 1.5vw; /* 1.5% of viewport width */
+  }
+
+  /*---------------------Footer adjust----------------------*/
+  footer #footer_logo {
+    width: 150px;
+  }
+
+  footer .footer_nav {
+    padding: 8px 0;
+  }
+
+  a.footer_link, footer #footer_copyright {
+    font-size: 18px;
+  }
+
+  footer .footer_nav .footer_link:hover {
+    /* Zoom the text and move the surrounding texts*/
+    margin: 0 60px;
+    color: #12A138;
+    transform: scale(2.1);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* Tweakpoint used to slightly adjust the menu*/
+  #desktop_menu table tr .logo_box #full {
+    display: none;
+  }
+
+  /* Both the size of globe and word logo will adjust when browser width changes*/
+  #desktop_menu table tr .logo_box #globe {
+    display: inline-block;
+    width: 4vw;
+    height: 4vw;
+    padding-top: 3px;
+  }
+
+  #desktop_menu table tr .logo_box #word {
+    display: inline-block;
+    /* Position the "puzzlity" to center of the globe */
+    position: relative;
+    bottom: 1.2vw;
+    width: 6vw;
+    height: 1.8vw;
+    padding-left: 5px;
+  }
+
+  #desktop_menu table tr td .vertical_align {
+    position: relative;
+    top: 9px;
+  }
+
+  /* Adjust the menu icon size when screen width gets bigger */
+  #desktop_menu table tr td .menu_icon {
+    height: 1.5vw;
+    width: 1.5vw;
+  }
+
+  #desktop_menu table tr td a {
+    padding: 10px 0;
+  }
+
+  #space {
+    /* Create a space with same height as the desktop menu*/
+    width: 100%;
+    height: 6.2vw;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /*---------------------Footer adjust----------------------*/
+  footer #footer_logo {
+    width: 180px;
+  }
+
+  footer .footer_nav {
+    padding: 10px 0;
+  }
+
+  a.footer_link, footer #footer_copyright {
+    font-size: 22px;
+  }
+
+  footer .footer_nav .footer_link:hover {
+    /* Zoom the text and move the surrounding texts*/
+    margin: 0 80px;
+    transform: scale(2.1);
+  }
+}

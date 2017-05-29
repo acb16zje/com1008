@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Written by Zer Jun Eng-->
+  <meta charset="utf-8">
+  <meta name="author" content="Zer Jun Eng">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <title>Puzzlity - Indispensable piece of your life</title>
+  <!--Link Google Roboto font, a favicon and stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="icon" href="./images/logo/logo_globe.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <!--This div element is the dark overlay when the menu is open-->
+  <div id="mobile_menu_overlay"></div>
+
+  <header>
+    <!--Logo to be shown on mobile platform-->
+    <div id="mobile_logo">
+      <a href="index.html"><img src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity"
+                                height="120" width="120"></a>
+    </div>
+
+    <button type="button" id="mobile_menu_button" onClick="openMenu()"><img
+        src="./images/menu_icon/menu.svg" alt="Hamburger menu icon" height="20" width="20">Menu
+    </button>
+
+    <!--Off-canvas menu on mobile display-->
+    <nav id="mobile_menu">
+      <a href="javascript:void(0)" id="close_button" onclick="closeMenu()">&times;</a>
+      <ul>
+        <!--Credit: all the menu icons are free licenses from flaticon.com. Edited using Adobe Illustrator.-->
+        <li><a href="index.html"><img class="menu_icon" src="./images/menu_icon/home.svg"
+                                      alt="Home icon" height="25" width="25">Home</a></li>
+        <li><a href="./main/recommendations.html"><img class="menu_icon"
+                                                       src="./images/menu_icon/star.svg"
+                                                       alt="Star icon" height="25" width="25">Recommendations</a>
+        </li>
+        <li><a href="./main/puzzles.html"><img class="menu_icon" src="./images/menu_icon/puzzle.svg"
+                                               alt="Puzzle icon" height="25" width="25">Puzzlity!</a>
+        </li>
+        <li><a href="./main/news.html"><img class="menu_icon" src="./images/menu_icon/news.svg"
+                                            alt="News icon" height="25" width="25">News</a></li>
+        <li><a href="./main/about_us.html"><img class="menu_icon" src="./images/menu_icon/about.svg"
+                                                alt="About icon" height="25" width="25">About Us</a>
+        </li>
+        <li><a href="./main/contact_us.html"><img class="menu_icon"
+                                                  src="./images/menu_icon/contact.svg"
+                                                  alt="Contact icon" height="25" width="25">Contact Us</a>
+        </li>
+        <li><a href="./main/accessibility.html"><img class="menu_icon"
+                                                     src="./images/menu_icon/accessibility.svg"
+                                                     alt="Accessibility icon" height="25" width="25">Accessibility</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Horizontal menu bar on desktop display-->
+    <nav id="desktop_menu">
+      <table>
+        <!--Credit: all the vector menu icons are free license from flaticon.com. Edited using Adobe Illustrator.-->
+        <tr>
+          <td class="logo_box">
+            <a id="desktop_logo" href="index.html">
+              <img id="full" src="./images/logo/logo_full.svg" alt="Main Logo of Puzzlity" height="95"
+                   width="95">
+              <img id="globe" src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity"
+                   height="50" width="50">
+              <img id="word" src="./images/logo/logo_word.svg" alt="Main Logo of Puzzlity" height="51"
+                   width="87">
+            </a>
+          </td>
+          <td>
+            <a href="index.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/home.svg"
+                                                alt="Home icon" height="40" width="40"><span
+                  class="desc"><br>Home</span></span>
+            </a>
+          </td>
+          <td class="longer">
+            <a href="./main/recommendations.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/star.svg"
+                                                alt="Star icon" height="40" width="40"><span
+                  class="desc"><br>Recommendations</span></span>
+            </a>
+          </td>
+          <td>
+            <a href="./main/puzzles.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/puzzle.svg"
+                                                alt="Puzzle icon" height="40" width="40"><span
+                  class="desc"><br>Puzzlity!</span></span>
+            </a>
+          </td>
+          <td>
+            <a href="./main/news.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/news.svg"
+                                                alt="News icon" height="40" width="40"><span
+                  class="desc"><br>News</span></span>
+            </a>
+          </td>
+          <td>
+            <a href="./main/about_us.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/about.svg"
+                                                alt="About icon" height="40" width="40"><span
+                  class="desc"><br>About Us</span></span>
+            </a>
+          </td>
+          <td>
+            <a href="./main/contact_us.html">
+              <span class="vertical_align"><img class="menu_icon" src="./images/menu_icon/contact.svg"
+                                                alt="Contact icon" height="40" width="40"><span
+                  class="desc"><br>Contact Us</span></span>
+            </a>
+          </td>
+          <td>
+            <a href="./main/accessibility.html">
+              <span class="vertical_align"><img class="menu_icon"
+                                                src="./images/menu_icon/accessibility.svg"
+                                                alt="Accessibility icon" height="40" width="40"><span
+                  class="desc"><br>Accessibility</span></span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </nav>
+  </header>
+
+  <!--Push the main content down so it won't be blocked by the fixed horizontal desktop menu-->
+  <div id="space"></div>
+
+  <main>
+    <!--Welcoming content-->
+    <section class="welcome">
+      <h1>Puzzle. Redefined.</h1>
+      <h4>Start your puzzle adventure today</h4>
+
+      <ul>
+        <li>Match-the-pairs puzzle</li>
+        <li>Sliding blocks puzzle</li>
+        <li>Spot-the-difference puzzle</li>
+        <li>River crossing puzzle</li>
+        <li>Matchsticks puzzle</li>
+      </ul>
+
+      <a id="get_started_top" href="./main/puzzles.html">Get Started Now</a>
+    </section>
+
+    <!--Website introduction-->
+    <!--Credit: all the vector images are free license from freepik.com. Edited using Adobe Illustrator.-->
+    <section class="first_intro">
+      <h1>Focus your mind, improve your concentration</h1>
+      <h4>Discover your inner genius, spark your creativity</h4>
+      <img class="intro_img" src="./images/homepage/brain-meditate.svg" alt="Brain meditating"
+           height="250" width="250">
+    </section>
+
+    <section class="second_intro">
+      <h1>Daily workout for your brain</h1>
+      <h4>Train your brain to boost productivity and problem solving skills</h4>
+      <img class="intro_img" src="./images/homepage/brain-workout.svg" alt="Energetic brain"
+           height="250" width="250">
+    </section>
+
+    <section class="third_intro">
+      <h1>Start stretching your brain now!</h1>
+      <h4>Enhance your intelligence and strengthen your cognitive flexibility</h4>
+      <img class="intro_img" src="./images/homepage/brain-juggle.svg" alt="Creative brain"
+           height="250" width="250">
+      <a id="get_started_bottom" href="./main/puzzles.html">Get Started Now</a>
+    </section>
+  </main>
+
+  <!--Footer template on all pages-->
+  <footer>
+    <a href="index.html"><img id="footer_logo" src="./images/logo/logo_word.svg"
+                              alt="Footer logo: puzzlity" width="120"></a>
+
+    <ul class="footer_nav">
+      <li><a class="footer_link" href="./main/news.html">News</a></li>
+      <li><a class="footer_link" href="./main/about_us.html">About Us</a></li>
+      <li><a class="footer_link" href="./main/contact_us.html">Contact Us</a></li>
+      <li><a class="footer_link" href="./main/accessibility.html">Accessibility</a></li>
+    </ul>
+
+    <h4 id="footer_copyright">&copy; Zer Jun ENG, Web Assignment, 2016</h4>
+  </footer>
+
+  <script src="./javascript/menu.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*----------------------CSS for Home page----------------------*/
+
+/*------------Welcoming content-------------*/
+.welcome, .first_intro, .second_intro, .third_intro {
+  /* Everything is center aligned */
+  text-align: center;
+  padding: 12px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+/* Welcoming content */
+.welcome ul {
+  /* Horizontally align the list */
+  display: table;
+  margin: 0 auto;
+}
+
+.welcome ul li {
+  font-size: 18px;
+  text-align: left;
+  padding: 7px 0;
+}
+
+.welcome #get_started_top {
+  display: inline-block;
+  text-decoration: none;
+  color: #12A138;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border: 3px solid #12A138;
+  border-radius: 12px;
+  padding: 13px 25px;
+  margin: 25px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.welcome #get_started_top:hover {
+  color: white;
+  background-color: #12A138;
+}
+
+/*--------First introduction content---------*/
+.first_intro {
+  background-color: #d4c8ea;
+}
+
+/*-------Second introduction content--------*/
+.second_intro {
+  background-color: #fccfcf;
+}
+
+/*--------Thrid introduction content---------*/
+.third_intro {
+  background-color: #ffffb3;
+}
+
+.third_intro #get_started_bottom {
+  display: inline-block;
+  text-decoration: none;
+  color: #00004C;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border: 3px solid #00004C;
+  border-radius: 12px;
+  padding: 13px 25px;
+  margin: 20px 0 20px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.third_intro #get_started_bottom:hover {
+  color: white;
+  background-color: #00004C;
+}
+
+/* Center all the images */
+.intro_img {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+  height: auto;
+  /* Shrink the images if the screen is too small */
+  max-width: 100%;
+  max-height: 100%;
+  padding: 5px 0 10px 0;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  /*--------Homepage main content---------*/
+  h1 {
+    font-size: 40px;
+  }
+
+  h4 {
+    font-size: 22px;
+  }
+
+  .welcome ul {
+    font-size: 20px;
+  }
+
+  /* Did not put .first_intro etc. here so they would inherit width: 100% and padding: 10px */
+  .intro_img {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  /* Adjust button size */
+  .welcome #get_started_top, .third_intro #get_started_bottom {
+    font-size: 22px;
+    padding: 15px 27px;
+    margin: 27px 0;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  .welcome ul {
+    font-size: 26px;
+  }
+
+  .intro_img {
+    height: 550px;
+    width: 550px;
+  }
+
+  .welcome #get_started_top, .third_intro #get_started_bottom {
+    font-size: 26px;
+    padding: 19px 31px;
+    margin: 31px 0;
+  }
+}

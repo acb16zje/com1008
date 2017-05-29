@@ -1,0 +1,153 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*------------------CSS for About Us page------------------*/
+main {
+  padding: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#note {
+  color: #e60000;
+  margin: 0 0 20px 0;
+}
+
+#introduction {
+  font-size: 19.5px;
+  margin: 0;
+  padding-bottom: 20px
+}
+
+/* Try to make the top content align with the founder section */
+.top {
+  padding: 0 10px;
+}
+
+h1 {
+  margin: 12px 0;
+}
+
+h1, h2 {
+  font-size: 30px;
+}
+
+h2, h4 {
+  margin: 5px 0;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+/* Larger separation between founder article */
+.founder {
+  padding: 40px 10px;
+}
+
+/* Move the images to the left */
+.flexleft {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  border-radius: 15%;
+  /* Shrink the photo when screen is too small */
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+p {
+  font-size: 18px;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  main {
+    padding: 45px;
+  }
+
+  #introduction {
+    font-size: 17.5px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    padding: 60px;
+  }
+
+  #introduction {
+    font-size: 19.5px;
+  }
+
+  h1, h2 {
+    font-size: 33px;
+  }
+
+  h2, h4 {
+    margin: 10px 0;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  /* Change the format for displaying image and biographies */
+  .founder {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flexleft {
+    margin: 0 50px 0 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Auto distribute the space according to width or height */
+  .flexright {
+    flex: auto;
+    width: 60%;
+    align-self: center;
+    padding: 0 10px;
+    margin: 0 0 0 50px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /* Font size, width, height adjustment */
+  main {
+    padding: 80px;
+    max-width: 1600px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  #introduction {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .flexleft {
+    margin-right: 100px;
+    width: 350px;
+    height: 350px;
+  }
+}

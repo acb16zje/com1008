@@ -1,0 +1,204 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*----------------------CSS for Contact Us page----------------------*/
+main {
+  padding: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#note {
+  color: #e60000;
+  margin: 0 0 20px 0;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: 30px;
+}
+
+/* Top address section */
+.headquarters {
+  padding-bottom: 30px;
+}
+
+/* Map image resize as the width changes */
+.headquarters img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 20px 0;
+}
+
+.headquarters table {
+  margin: 0 auto;
+}
+
+.headquarters table tr td {
+  padding: 10px 15px;
+}
+
+.headquarters td.label {
+  text-align: right;
+}
+
+/* Bottom feedback section */
+.feedback form {
+  padding: 10px;
+  text-align: center;
+  border: 3px solid #345995;
+  border-radius: 10px;
+  background-color: #f3ffe6;
+}
+
+/* Align Name, Email and Subject, table form is not displayed in mobile */
+.feedback table {
+  width: 100%;
+}
+
+.feedback table tr td {
+  display: block;
+  padding: 10px 0;
+}
+
+/* Bold label */
+.feedback form td.label {
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.feedback form tr td input {
+  width: 90%;
+}
+
+/* Align comments part */
+/* Green border for input box, effect on focus */
+.feedback form table input, .comments textarea {
+  border: 2px dashed #1dc94b;
+  border-radius: 3px;
+  padding: 5px;
+  outline: none; /* Remove defaul browser outline, use focus outline */
+  transition: 0.3s;
+}
+
+.feedback form .comments textarea {
+  width: 90%;
+  resize: none;
+}
+
+.feedback form table input:focus, .comments textarea:focus {
+  /* Contrast effect to show focus*/
+  border: 2px solid #0d7228;
+  box-shadow: 0px 0px 10px #5fec85;
+}
+
+.feedback form .buttons {
+  text-align: center;
+}
+
+/* Customize both the submit and reset buttons */
+.feedback form #submit, .feedback form #reset {
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  color: #0d7328;
+  border: 2px solid #0d7328;
+  border-radius: 5px;
+  padding: 8px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feedback form #submit:hover, .feedback form #reset:hover {
+  color: white;
+  background-color: #0d7328;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  main {
+    padding: 45px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* Tweakpoint for the headquarters and feedback section */
+@media screen and (min-width: 700px) {
+  .headquarters div {
+    display: flex;;
+    flex-direction: row;
+  }
+
+  .headquarters img {
+    height: 180px;
+    width: 320px;
+    margin-right: 0;
+  }
+
+  .headquarters table {
+    display: block;
+    margin: 0 auto;
+    align-self: center;
+  }
+
+  .feedback table tr td {
+    display: table-cell;
+  }
+
+  .feedback form td.label {
+    width: 15%;
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    padding: 60px;
+  }
+
+  p, td {
+    font-size: 18px;
+  }
+
+  .headquarters img {
+    width: 455px;
+    height: 255px;
+    margin: 0 30px 0 auto;
+  }
+
+  .headquarters table {
+    margin: 0 auto 0 30px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /* Slight format adjustment */
+  main {
+    padding: 80px;
+    max-width: 1600px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  p, td {
+    font-size: 26px;
+  }
+
+  .headquarters img {
+    margin-right: 90px;
+    width: 550px;
+    height: 308px;
+  }
+}

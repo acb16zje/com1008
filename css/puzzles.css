@@ -1,0 +1,220 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*------------------CSS for About Us page------------------*/
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+/* New release h1 */
+#new {
+  margin-top: 10px;
+}
+
+canvas {
+  display: block;
+  /* Have to set it again as javascript uses clientWidth/clientHeight */
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+/* Start button */
+#start {
+  display: inline-block;
+  font-size: 16px;
+  color: white;
+  border: none;
+  background-color: #1a7f5f;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#start:hover {
+  background: #21A179;
+  text-decoration: none;
+}
+
+section {
+  padding: 12px;
+}
+
+/* All these images occupy a row on mobile display */
+.match #match_the_pairs, .sliding #sliding_blocks, .spot #spot_the_difference, .matchstick #matchstick, .river #river {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  /* Shrink the images if the screen is too small */
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*--------Match-the-pairs---------*/
+.match {
+  color: #FEFFB8;
+  background-color: #9E1F28;
+}
+
+/*---------Sliding-blocks---------*/
+.sliding {
+  background-color: #ecff99;
+}
+
+/*--------Spot-the-difference---------*/
+.spot {
+  background-color: #ff925e;
+}
+
+/*------------Matchstick-------------*/
+.matchstick {
+  background-color: #F7EF99;
+}
+
+/*----------River crossing-----------*/
+.river {
+  background-color: #B9F18C;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  /* Size adjustment */
+  canvas {
+    width: 390px;
+    height: 390px;
+  }
+
+  #start {
+    font-size: 20px;
+  }
+
+  section {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  /* Enlarge all the images*/
+  .match #match_the_pairs, .sliding #sliding_blocks, .matchstick #matchstick {
+    height: auto;
+    width: 350px;
+  }
+
+  .spot #spot_the_difference {
+    height: 300px;
+    width: auto;
+  }
+
+  .river #river {
+    height: auto;
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  canvas {
+    width: 450px;
+    height: 450px;
+  }
+
+  .flexbox {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Game part */
+  .flexbox .flexleft {
+    width: 50%;
+  }
+
+  /* Description part */
+  .flexbox .flexright {
+    width: 50%;
+    align-self: center;
+  }
+
+  /* Coming soon game*/
+  .flexbox_one, .flexbox_two {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Occupy half of the screen */
+  .match, .spot, .matchstick, .river {
+    width: 50%;
+  }
+
+  /* Adjust the image to have same height as spot the difference*/
+  .match #match_the_pairs {
+    height: 300px;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /* Size adjustment */
+  main {
+    max-width: 1600px;
+  }
+
+  canvas {
+    width: 510px;
+    height: 510px;
+  }
+
+  #start {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+
+  /* Enlarge all the images*/
+  .match #match_the_pairs {
+    height: auto;
+    width: 500px;
+  }
+
+  .sliding #sliding_blocks, .matchstick #matchstick {
+    height: auto;
+    width: 500px;
+  }
+
+  .spot #spot_the_difference {
+    height: 370px;
+    width: auto;
+  }
+
+  .river #river {
+    height: 325px;
+    width: auto;
+  }
+}

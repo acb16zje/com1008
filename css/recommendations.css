@@ -1,0 +1,256 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*------------------CSS for Recommendation page------------------*/
+body {
+  background-color: #9E1F28;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p.review {
+  font-size: 17px;
+  font-style: italic;
+}
+
+/* Center both the images and reviews on mobile display */
+.match, .sliding, .spot, .matchstick, .river, .special {
+  text-align: center;
+  padding: 12px;
+}
+
+/* All these images occupy a row on mobile display */
+.match #match_the_pairs, .sliding #sliding_blocks, .spot #spot_the_difference, .matchstick #matchstick, .river #river, .special .special_img {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  /* Shrink the images if the screen is too small */
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*--------Match-the-pairs---------*/
+.match {
+  color: #FEFFB8;
+}
+
+/*---------Sliding-blocks---------*/
+.sliding {
+  background-color: #ecff99;
+}
+
+/*--------Spot-the-difference---------*/
+.spot {
+  background-color: #ff925e;
+}
+
+/*------------Matchstick-------------*/
+.matchstick {
+  background-color: #F7EF99;
+}
+
+/*----------River crossing-----------*/
+.river {
+  background-color: #B9F18C;
+}
+
+/*--------Special Recommendations--------*/
+.special {
+  background-color: #f2fff5;
+}
+
+.special h1 {
+  color: #034054;
+}
+
+.special h2 {
+  margin: 10px 0;
+}
+
+.first_special, .second_special, .third_special {
+  padding: 20px 0;
+}
+
+.clickMe {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 12px;
+  padding: 13px 25px;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Where's My Water? */
+.first_special .clickMe {
+  color: #593C8F;
+  border: 3px solid #593C8F;
+}
+
+.first_special .clickMe:hover {
+  color: white;
+  background-color: #593C8F;
+}
+
+/* Cut the Rope */
+.second_special .clickMe {
+  color: #ff4d4d;
+  border: 3px solid #ff4d4d;
+}
+
+.second_special .clickMe:hover {
+  color: white;
+  background-color: #ff4d4d;
+}
+
+/* King of Thieves */
+.third_special .clickMe {
+  color: #1a53ff;
+  border: 3px solid #1a53ff;
+}
+
+.third_special .clickMe:hover {
+  color: white;
+  background-color: #1a53ff;
+}
+
+.third_special .special_img {
+  border-radius: 30px;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h4, p.review {
+    font-size: 24px;
+  }
+
+  /* Enlarge all the images*/
+  .match #match_the_pairs, .sliding #sliding_blocks, .matchstick #matchstick {
+    height: auto;
+    width: 350px;
+  }
+
+  .spot #spot_the_difference {
+    height: 350px;
+    width: auto;
+  }
+
+  .river #river {
+    height: auto;
+    width: 550px;
+  }
+}
+
+/* Tweakpoint for the special recommendations section */
+@media screen and (min-width: 800px) {
+  /*-------Special Recommendations Section-------*/
+  .special .flexbox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .first_special, .second_special, .third_special {
+    flex-direction: column;
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    margin-bottom: 0;
+  }
+
+  /*-------Use flexbox to position the image and the text-------*/
+  .flexbox {
+    display: flex;
+    flex: auto;
+    padding: 20px 0;
+  }
+
+  /* River crossing image needs to have different width size */
+  .flexbox #match_the_pairs, .flexbox #sliding_blocks, .flexbox #spot_the_difference, .flexbox #matchstick {
+    width: 30vw;
+    height: 22vw;
+  }
+
+  /* Match-the-pairs, Spot-the-difference, River crossing image at left */
+  .match .flexbox, .spot .flexbox, .river .flexbox {
+    flex-direction: row;
+  }
+
+  /* Move the image to the left */
+  .match #match_the_pairs, .spot #spot_the_difference, .river #river {
+    margin: 0 50px 0 auto;
+  }
+
+  /*----------River crossing-----------*/
+  /* Move the image to the left */
+  .river .flexbox #river {
+    height: 30vw;
+    width: 40vw;
+  }
+
+  /* Sliding-blocks, Matchstick image at right */
+  .sliding .flexbox, .matchstick .flexbox {
+    flex-direction: row-reverse;
+  }
+
+  /* Move the image to the right */
+  .sliding #sliding_blocks, .matchstick #matchstick {
+    margin: 0 auto 0 50px;
+  }
+
+  /* Positioning the reviews */
+  .flextext {
+    align-self: center;
+    padding: 0 10px;
+  }
+
+  /* Match-the-pairs, Spot-the-difference, River crossing reviews at right */
+  .match .flextext, .spot .flextext, .river .flextext {
+    margin: 0 auto 0 50px;
+  }
+
+  /* Sliding-blocks, Matchstick reviews at left */
+  .sliding .flextext, .matchstick .flextext {
+    margin: 0 50px 0 auto;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /* Slightly adjusting the font size of some elements */
+  h1 {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p.review {
+    font-size: 34px;
+  }
+
+  .special_img {
+    height: 300px;
+    width: 300px;
+  }
+
+  .clickMe {
+    font-size: 24px;
+  }
+}

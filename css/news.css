@@ -1,0 +1,163 @@
+/* Written by Zer Jun Eng, 2016*/
+
+/*------------------CSS for News page------------------*/
+main {
+  padding: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#note {
+  color: #e60000;
+  margin: 0 0 20px 0;
+}
+
+/* Larger separation between news article */
+.news {
+  padding: 10px;
+}
+
+h1, h3 {
+  margin: 5px 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Move the images to the left */
+.flexleft {
+  display: block;
+  margin: 0 auto;
+  padding: 15px 0;
+  /* Shrink the photo when screen is too small */
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a {
+  color: #0f0080;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0d7328;
+}
+
+/*-------------------------Media rules-------------------------*/
+@media screen and (min-width: 600px) {
+  main {
+    padding: 45px;
+  }
+
+  .flexleft {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    padding: 60px;
+  }
+
+  h1 {
+    font-size: 33px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+  /* Separation between articles */
+  hr {
+    margin: 30px 0;
+  }
+
+  /* Change the format for displaying news */
+  .news div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flexleft {
+    margin: 0 50px 0 0;
+  }
+
+  div #first {
+    width: 400px;
+    height: 265px;
+  }
+
+  div #second {
+    width: 350px;
+    height: 350px;
+    margin: 0 75px 0 25px;
+  }
+
+  div #third {
+    width: 400px;
+    height: 249px;
+  }
+
+  /* Auto distribute the space according to width or height */
+  .flexright {
+    width: 60%;
+    align-self: center;
+    padding: 0 10px;
+    margin: 0 0 0 50px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  /* Font size, width, height adjustment */
+  main {
+    padding: 80px;
+    max-width: 1600px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  /* Separation between articles */
+  hr {
+    margin: 50px 0;
+  }
+
+  .flexleft {
+    margin-right: 100px;
+  }
+
+  div #first {
+    width: 500px;
+    height: 331px;
+  }
+
+  div #second {
+    width: 500px;
+    height: 500px;
+    margin: 0 100px 0 0;
+  }
+
+  div #third {
+    width: 500px;
+    height: 311px;
+  }
+}
