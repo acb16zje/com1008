@@ -5,9 +5,9 @@
 /********************** Functions **********************/
 // Preload the images
 function initAndStart(context) {
-  var imageCount = 0;
+  let imageCount = 0;
 
-  for (var i = 0; i < images.length; i++) {
+  for (let i = 0; i < images.length; i++) {
     images[i].onload = function () {
       imageCount++;
       if (imageCount == images.length) {
@@ -26,9 +26,9 @@ function nextImage() {
 
 // Shuffle the order
 function shuffle(tiles) {
-  var lastTile = tiles.length;
-  var randomTile;
-  var temp;
+  let lastTile = tiles.length;
+  let randomTile;
+  let temp;
   solved = false;
 
   while (lastTile > 0) {
@@ -45,20 +45,14 @@ function shuffle(tiles) {
     tiles[randomTile] = temp;
   }
 
-
-
-  if (isSolvable(tiles)) {
-    getPuzzle(tiles);
-  } else {
-    shuffle(tileOrder);
-  }
+  isSolvable(tiles) ? getPuzzle(tiles) : shuffle(tileOrder);
 }
 
 function isSolvable(puzzle) {
-  var invertCount = 0;
+  let invertCount = 0;
 
-  for (var i = 0; i < 9 - 1; i++) {
-    for (var j = i + 1; j < 9; j++) {
+  for (let i = 0; i < 9 - 1; i++) {
+    for (let j = i + 1; j < 9; j++) {
       // Value 0 is used for empty space
       if (puzzle[j] && puzzle[i] && puzzle[i] > puzzle[j]) {
         invertCount++;
@@ -71,10 +65,10 @@ function isSolvable(puzzle) {
 
 // Pass the shuffled order into the 2D array
 function getPuzzle(tiles) {
-  var n = 0;
+  let n = 0;
 
-  for (var row = 0; row < board.length; row++) {
-    for (var column = 0; column < board[row].length; column++) {
+  for (let row = 0; row < board.length; row++) {
+    for (let column = 0; column < board[row].length; column++) {
       board[row][column] = tiles[n];
       n += 1;
     }
@@ -84,10 +78,10 @@ function getPuzzle(tiles) {
 
 // Draw the tiles with number on top left corner
 function drawPuzzle(context, images, board) {
-  var x = 0;
-  var y = 0;
-  for (var row = 0; row < board.length; row++) {
-    for (var column = 0; column < board[row].length; column++) {
+  let x = 0;
+  let y = 0;
+  for (let row = 0; row < board.length; row++) {
+    for (let column = 0; column < board[row].length; column++) {
       context.font = "18px Verdana";
       context.textAlign = "start";
       context.fillStyle = "black";
@@ -169,16 +163,16 @@ function drawPuzzle(context, images, board) {
 
 // Credit: Lecture 15 example
 function getMouseXY(e) {
-  var boundingRect = canvas.getBoundingClientRect();
-  var offsetX = boundingRect.left;
-  var offsetY = boundingRect.top;
-  var w = (boundingRect.width - canvas.width) / 2;
-  var h = (boundingRect.height - canvas.height) / 2;
+  let boundingRect = canvas.getBoundingClientRect();
+  let offsetX = boundingRect.left;
+  let offsetY = boundingRect.top;
+  let w = (boundingRect.width - canvas.width) / 2;
+  let h = (boundingRect.height - canvas.height) / 2;
   offsetX += w;
   offsetY += h;
   // use clientX and clientY as getBoundingClientRect is used above
-  var mx = Math.round(e.clientX - offsetX);
-  var my = Math.round(e.clientY - offsetY);
+  let mx = Math.round(e.clientX - offsetX);
+  let my = Math.round(e.clientY - offsetY);
   return {x: mx, y: my};
 }
 
@@ -196,16 +190,16 @@ function whichGridCell(x, y) {
   if (y >= canvas.height) {
     y = canvas.height - 1;
   }
-  var gx = Math.floor(x / TILE_WIDTH);
-  var gy = Math.floor(y / TILE_HEIGHT);
+  let gx = Math.floor(x / TILE_WIDTH);
+  let gy = Math.floor(y / TILE_HEIGHT);
   // need to be careful here
   // x, y on screen is column, row in grid
   return {row: gy, column: gx};
 }
 
 function checkTile(evt) {
-  var position = getMouseXY(evt);
-  var tile = whichGridCell(position.x, position.y);
+  let position = getMouseXY(evt);
+  let tile = whichGridCell(position.x, position.y);
 
   if (!solved) {
     // If not clicked on the top row, then check the upper tile
@@ -237,11 +231,11 @@ function swapTile(row, column, toRow, toColumn) {
 }
 
 function checkSolved() {
-  var correctCount = 0;
-  var n = 1;
+  let correctCount = 0;
+  let n = 1;
 
-  for (var row = 0; row < board.length; row++) {
-    for (var column = 0; column < board[row].length; column++) {
+  for (let row = 0; row < board.length; row++) {
+    for (let column = 0; column < board[row].length; column++) {
       if (board[row][column] == n) {
         // Check for 1, 2, 3, 4, 5, 6, 7, 8 in sequence
         correctCount++;
@@ -260,15 +254,15 @@ function checkSolved() {
 // Draw the complete images and winning animations
 function winScreen() {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  var x1 = 0;
-  var y1 = 0;
-  var x2 = 0;
-  var y2 = 0;
-  var column = 0;
-  var total = 0;
-  var textX = 0;
+  let x1 = 0;
+  let y1 = 0;
+  let x2 = 0;
+  let y2 = 0;
+  let column = 0;
+  let total = 0;
+  let textX = 0;
 
-  var oneByOne = setInterval(function () {
+  let oneByOne = setInterval(function () {
     context.drawImage(images[randomVal], x1, y1, S_WIDTH, S_HEIGHT, x2, y2,
         TILE_WIDTH, TILE_HEIGHT);
     x1 += 300;
@@ -289,8 +283,8 @@ function winScreen() {
       context.globalAlpha = 1;
       context.font = "bold 25px Verdana";
       context.textAlign = "center";
-      var colour = 0;
-      var flash = setInterval(function () {
+      let colour = 0;
+      let flash = setInterval(function () {
         // Only display the text when the puzzle is completed
         if (!solved) {
           clearInterval(flash);
@@ -323,19 +317,19 @@ function winScreen() {
 
 /******************** Main Program *********************/
 /* Variables */
-var canvas = document.getElementById("game");
+let canvas = document.getElementById("game");
 /* Image and text will get blur by resizing the canvas through CSS */
 // Setting this will give clear text, lines and image
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
-var context = canvas.getContext("2d");
-var solved = false;
-var requestID;
-var randomVal = Math.floor((Math.random() * 1000) % 3);
-var tileOrder = [1, 2, 3, 4, 5, 6, 7, 8, 0];
+let context = canvas.getContext("2d");
+let solved = false;
+let requestID;
+let randomVal = Math.floor((Math.random() * 1000) % 3);
+let tileOrder = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 
 /* Images */
-var images = [];
+let images = [];
 images[0] = new Image();
 images[0].src = "../images/puzzles/sliding1.png";
 
@@ -346,8 +340,8 @@ images[2] = new Image();
 images[2].src = "../images/puzzles/sliding3.png";
 
 /* 2D array for puzzle game */
-var board = new Array(3);
-for (var i = 0; i < board.length; i++) {
+let board = new Array(3);
+for (let i = 0; i < board.length; i++) {
   board[i] = new Array(3);
 }
 
