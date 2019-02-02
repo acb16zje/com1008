@@ -54,9 +54,7 @@ function isSolvable(puzzle) {
   for (let i = 0; i < 9 - 1; i++) {
     for (let j = i + 1; j < 9; j++) {
       // Value 0 is used for empty space
-      if (puzzle[j] && puzzle[i] && puzzle[i] > puzzle[j]) {
-        invertCount++;
-      }
+      invertCount += puzzle[j] && puzzle[i] && puzzle[i] > puzzle[j];
     }
   }
 
@@ -260,7 +258,6 @@ function winScreen() {
   let y2 = 0;
   let column = 0;
   let total = 0;
-  let textX = 0;
 
   let oneByOne = setInterval(function () {
     context.drawImage(images[randomVal], x1, y1, S_WIDTH, S_HEIGHT, x2, y2,
@@ -324,7 +321,6 @@ canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 let context = canvas.getContext("2d");
 let solved = false;
-let requestID;
 let randomVal = Math.floor((Math.random() * 1000) % 3);
 let tileOrder = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 
