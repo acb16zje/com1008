@@ -19,6 +19,7 @@ function initAndStart(context) {
 
 // onclick event in HTML
 function nextImage() {
+  clearInterval(oneByOne);
   // Prevent the value going over 2
   randomVal = (randomVal + 1) % 3;
   shuffle(tileOrder);
@@ -86,57 +87,49 @@ function drawPuzzle(context, images, board) {
 
       switch (board[row][column]) {
         case 1:
-          context.drawImage(images[randomVal], 0, 0, S_WIDTH, S_HEIGHT, x, y,
-              TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 0, 0, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("1", x + 5, y + 20);
           break;
         case 2:
-          context.drawImage(images[randomVal], 300, 0, S_WIDTH, S_HEIGHT, x, y,
-              TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 300, 0, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("2", x + 5, y + 20);
           break;
         case 3:
-          context.drawImage(images[randomVal], 600, 0, S_WIDTH, S_HEIGHT, x, y,
-              TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 600, 0, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("3", x + 5, y + 20);
           break;
         case 4:
-          context.drawImage(images[randomVal], 0, 300, S_WIDTH, S_HEIGHT, x, y,
-              TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 0, 300, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("4", x + 5, y + 20);
           break;
         case 5:
-          context.drawImage(images[randomVal], 300, 300, S_WIDTH, S_HEIGHT, x,
-              y, TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 300, 300, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("5", x + 5, y + 20);
           break;
         case 6:
-          context.drawImage(images[randomVal], 600, 300, S_WIDTH, S_HEIGHT, x,
-              y, TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 600, 300, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("6", x + 5, y + 20);
           break;
         case 7:
-          context.drawImage(images[randomVal], 0, 600, S_WIDTH, S_HEIGHT, x, y,
-              TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 0, 600, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("7", x + 5, y + 20);
           break;
         case 8:
-          context.drawImage(images[randomVal], 300, 600, S_WIDTH, S_HEIGHT, x,
-              y, TILE_WIDTH, TILE_HEIGHT);
+          context.drawImage(images[randomVal], 300, 600, S_WIDTH, S_HEIGHT, x, y, TILE_WIDTH, TILE_HEIGHT);
           context.rect(x, y, TILE_WIDTH, TILE_HEIGHT);
           context.stroke();
           context.fillText("8", x + 5, y + 20);
@@ -259,9 +252,8 @@ function winScreen() {
   let column = 0;
   let total = 0;
 
-  let oneByOne = setInterval(function () {
-    context.drawImage(images[randomVal], x1, y1, S_WIDTH, S_HEIGHT, x2, y2,
-        TILE_WIDTH, TILE_HEIGHT);
+  oneByOne = setInterval(function () {
+    context.drawImage(images[randomVal], x1, y1, S_WIDTH, S_HEIGHT, x2, y2, TILE_WIDTH, TILE_HEIGHT);
     x1 += 300;
     x2 += TILE_WIDTH;
     column++;
@@ -283,9 +275,7 @@ function winScreen() {
       let colour = 0;
       let flash = setInterval(function () {
         // Only display the text when the puzzle is completed
-        if (!solved) {
-          clearInterval(flash);
-        } else {
+        if (solved) {
           // Flash in light red, light green and light blue
           if (colour == 0) {
             context.fillStyle = "#ffb3b3";
@@ -294,15 +284,15 @@ function winScreen() {
           } else if (colour == 2) {
             context.fillStyle = "#b3e6ff";
           }
+
           colour = (colour + 1) % 3;
-          context.fillText("You win!", canvas.width / 2, canvas.height / 2
-              - 20);
-          context.fillText("Press start to play again", canvas.width
-              / 2, canvas.height / 2 + 20);
+          context.fillText("You win!", canvas.width / 2, canvas.height / 2 - 20);
+          context.fillText("Press start to play again", canvas.width / 2, canvas.height / 2 + 20);
+        } else {
+          clearInterval(flash);
         }
       }, 500);
-    }
-    else if (column == 3) {
+    } else if (column == 3) {
       column = 0;
       x1 = 0;
       x2 = 0;
@@ -321,6 +311,7 @@ canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
 let context = canvas.getContext("2d");
 let solved = false;
+let oneByOne;
 let randomVal = Math.floor((Math.random() * 1000) % 3);
 let tileOrder = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 
