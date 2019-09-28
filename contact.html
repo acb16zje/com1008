@@ -5,14 +5,14 @@
   <!--Written by Zer Jun Eng-->
   <meta charset="utf-8">
   <meta name="author" content="Zer Jun Eng">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Puzzlity - Indispensable piece of your life</title>
+  <title>Puzzlity - About Us</title>
   <!--Link Google Roboto font, a favicon and stylesheets-->
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" href="./images/logo/logo_globe.png">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/contact_us.css">
 
   <script defer src="./javascript/menu.js"></script>
 </head>
@@ -153,44 +153,65 @@
   <div id="space"></div>
 
   <main>
-    <!--Welcoming content-->
-    <section class="welcome">
-      <h1>Puzzle. Redefined.</h1>
-      <h4>Start your puzzle adventure today</h4>
-
-      <ul>
-        <li>Match-the-pairs puzzle</li>
-        <li>Sliding blocks puzzle</li>
-        <li>Spot-the-difference puzzle</li>
-        <li>River crossing puzzle</li>
-        <li>Matchsticks puzzle</li>
-      </ul>
-
-      <a id="get_started_top" href="puzzles">Get Started Now</a>
+    <section class="headquarters">
+      <p id="note">Note: the information below is fictitious.</p>
+      <h1>Headquarters</h1>
+      <div>
+        <img src="./images/contact_us/headquarters.png" alt="Image of headquarters location"
+             height="151" width="270">
+        <table>
+          <tr>
+            <td class="label">Company Name:</td>
+            <td>Puzzlity</td>
+          </tr>
+          <tr>
+            <td class="label">Address:</td>
+            <td>Puzzlity Ltd.<br> 135 Dragon St<br> Unicorn<br> U3 8RA<br> United Kingdom<br></td>
+          </tr>
+          <tr>
+            <td class="label">Telephone:</td>
+            <td>+44 7700 900759</td>
+          </tr>
+        </table>
+      </div>
     </section>
 
-    <!--Website introduction-->
-    <!--Credit: all the vector images are free license from freepik.com. Edited using Adobe Illustrator.-->
-    <section class="first_intro">
-      <h1>Focus your mind, improve your concentration</h1>
-      <h4>Discover your inner genius, spark your creativity</h4>
-      <img class="intro_img" src="./images/homepage/brain-meditate.svg" alt="Brain meditating"
-           height="250" width="250">
-    </section>
+    <section class="feedback">
+      <h1>Help Improve Puzzlity's Products</h1>
+      <p>Your feedback is important to us. We would like to hear your suggestions for Puzzlity
+        and use them to improve the experience for everyone.</p>
 
-    <section class="second_intro">
-      <h1>Daily workout for your brain</h1>
-      <h4>Train your brain to boost productivity and problem solving skills</h4>
-      <img class="intro_img" src="./images/homepage/brain-workout.svg" alt="Energetic brain"
-           height="250" width="250">
-    </section>
+      <form name="myForm" action="" method="get">
+        <!-- the following line must be included as it is required by the cgi script -->
+        <input type="hidden" name="recipient" value="">
 
-    <section class="third_intro">
-      <h1>Start stretching your brain now!</h1>
-      <h4>Enhance your intelligence and strengthen your cognitive flexibility</h4>
-      <img class="intro_img" src="./images/homepage/brain-juggle.svg" alt="Creative brain"
-           height="250" width="250">
-      <a id="get_started_bottom" href="puzzles">Get Started Now</a>
+        <!-- full details at: http://www.scriptarchive.com/formmail -->
+        <input type="hidden" name="subject" value="Customer Feedback"/>
+
+        <table>
+          <tr>
+            <td class="label"><label for="from">Your name: </label></td>
+            <td><input type="text" name="from" id="from" maxlength="40" size="20"
+                       placeholder="Please type your name" required></td>
+          </tr>
+          <tr>
+            <td class="label"><label for="email">E-mail address: </label></td>
+            <td><input type="email" name="email" id="email" placeholder="Please type your email"
+                       maxlength="40" size="20" required></td>
+          </tr>
+          <tr class="comments">
+            <td class="label"><label for="comments">Comments: </label></td>
+            <td><textarea name="comments" id="comments" placeholder="Please type your comments..."
+                          rows="10" cols="20" required></textarea></td>
+          </tr>
+        </table>
+
+        <!-- must have one button of type 'submit' in order to send the form to the cgi script -->
+        <p class="buttons">
+          <input type="submit" name="submit" id="submit" value="Submit">
+          <input type="reset" name="reset" id="reset" value="Reset">
+        </p>
+      </form>
     </section>
   </main>
 

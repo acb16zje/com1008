@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Written by Zer Jun Eng-->
+  <meta charset="utf-8">
+  <meta name="author" content="Zer Jun Eng">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Puzzlity - Your daily dose of fun</title>
+  <!--Link Google Roboto font, a favicon and stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="icon" href="./images/logo/logo_globe.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/puzzles.css">
+
+  <!--Menu system script-->
+  <script defer src="./javascript/menu.js"></script>
+
+  <!--Puzzle game script-->
+  <script defer src="./javascript/puzzles.js"></script>
+</head>
+
+<body>
+  <!--This div element is the dark overlay when the menu is open-->
+  <div id="mobile_menu_overlay"></div>
+
+  <header>
+    <!--Logo to be shown on mobile platform-->
+    <div id="mobile_logo">
+      <a href="/com1008">
+        <img src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity" height="120" width="120">
+      </a>
+    </div>
+
+    <button type="button" id="mobile_menu_button" onClick="openMenu()">
+      <img src="./images/menu_icon/menu.svg" alt="Hamburger menu icon" height="20" width="20">Menu
+    </button>
+
+    <!--Off-canvas menu on mobile display-->
+    <nav id="mobile_menu">
+      <a href="javascript:void(0)" id="close_button" onclick="closeMenu()">&times;</a>
+      <ul>
+        <!--Credit: all the menu icons are free licenses from flaticon.com. Edited using Adobe Illustrator.-->
+        <li>
+          <a href="/com1008">
+            <img class="menu_icon" src="./images/menu_icon/home.svg" alt="Home icon" height="25" width="25">Home
+          </a>
+        </li>
+        <li>
+          <a href="recommendations">
+            <img class="menu_icon" src="./images/menu_icon/star.svg" alt="Star icon" height="25" width="25">Recommendations
+          </a>
+        </li>
+        <li>
+          <a href="puzzles">
+            <img class="menu_icon" src="./images/menu_icon/puzzle.svg" alt="Puzzle icon" height="25" width="25">Puzzlity!
+          </a>
+        </li>
+        <li>
+          <a href="news">
+            <img class="menu_icon" src="./images/menu_icon/news.svg" alt="News icon" height="25" width="25">News
+          </a>
+        </li>
+        <li>
+          <a href="about">
+            <img class="menu_icon" src="./images/menu_icon/about.svg" alt="About icon" height="25" width="25">About Us
+          </a>
+        </li>
+        <li>
+          <a href="contact">
+            <img class="menu_icon" src="./images/menu_icon/contact.svg" alt="Contact icon" height="25" width="25">Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="accessibility">
+            <img class="menu_icon" src="./images/menu_icon/accessibility.svg" alt="Accessibility icon" height="25" width="25">Accessibility
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Horizontal menu bar on desktop display-->
+    <nav id="desktop_menu">
+      <table>
+        <!--Credit: all the vector menu icons are free license from flaticon.com. Edited using Adobe Illustrator.-->
+        <tr>
+          <td class="logo_box">
+            <a id="desktop_logo" href="/com1008">
+              <img id="full" src="./images/logo/logo_full.svg" alt="Main Logo of Puzzlity" height="95" width="95">
+              <img id="globe" src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity" height="50" width="50">
+              <img id="word" src="./images/logo/logo_word.svg" alt="Main Logo of Puzzlity" height="51" width="87">
+            </a>
+          </td>
+          <td>
+            <a href="/com1008">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/home.svg" alt="Home icon" height="40" width="40">
+                <span class="desc"><br>Home</span>
+              </span>
+            </a>
+          </td>
+          <td class="longer">
+            <a href="recommendations">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/star.svg" alt="Star icon" height="40" width="40">
+                <span class="desc"><br>Recommendations</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="puzzles">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/puzzle.svg" alt="Puzzle icon" height="40" width="40">
+                <span class="desc"><br>Puzzlity!</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="news">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/news.svg" alt="News icon" height="40" width="40">
+                <span class="desc"><br>News</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="about">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/about.svg" alt="About icon" height="40" width="40">
+                <span class="desc"><br>About Us</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="contact">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/contact.svg" alt="Contact icon" height="40" width="40">
+                <span class="desc"><br>Contact Us</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="accessibility">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/accessibility.svg" alt="Accessibility icon" height="40" width="40">
+                <span class="desc"><br>Accessibility</span>
+              </span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </nav>
+  </header>
+
+  <!--Push the main content down so it won't be blocked by the fixed horizontal desktop menu-->
+  <div id="space"></div>
+
+  <main>
+    <section class="sliding">
+      <div class="flexbox">
+        <div class="flexleft">
+          <canvas id="game" height="300" width="300"></canvas>
+          <button type="button" id="start" onclick="nextImage()">Start</button>
+        </div>
+        <div class="flexright">
+          <h1 id="new">New release: Sliding blocks puzzle</h1>
+          <p>Slide your way to victory!<br><br>Sliding blocks puzzle is suitable
+          for both children and adults. Complete all the cute pictures while
+          training your creativity and thinking power.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--Coming soon-->
+    <h1 id="soon">Coming Soon...</h1>
+
+    <!--Credit: all these images are from Google Images, converted into SVG file format using https://www.vectorizer.io/-->
+    <div class="flexbox_one">
+      <!--Match-the-pairs puzzle-->
+      <section class="match">
+        <h2>Match-the-pairs puzzle</h2>
+        <img id="match_the_pairs" src="./images/recommendations/match-the-pairs.svg"
+             alt="Image of match-the-pairs puzzle game" width="250">
+        <p>Find a pair of the same images and try to match them. Challenge your memory and solve the
+          puzzle
+          as quickly as possible. Good luck have fun!
+        </p>
+      </section>
+
+      <!--Spot-the-difference puzzle-->
+      <section class="spot">
+        <h2>Spot-the-difference puzzle</h2>
+        <img id="spot_the_difference" src="./images/recommendations/spot-the-difference.svg"
+             alt="Image of spot-the-difference puzzle game" width="250">
+        <p>Can you discover them all? <br><br>Improve your attention skill by finding all five
+          differences between
+          two similar pictures.</p>
+      </section>
+    </div>
+    <div class="flexbox_two">
+      <!--Extra: Matchstick puzzle-->
+      <section class="matchstick">
+        <h2>Matchstick puzzle</h2>
+        <img id="matchstick" src="./images/recommendations/matchstick.svg"
+             alt="Image of matchstick puzzle game" width="250">
+        <p>Casual logic skill challenge for everyone. Solve the puzzles by moving the matches until
+          you find the
+          right solution. Have fun! </p>
+      </section>
+
+      <!--Extra: River-crossing puzzle-->
+      <section class="river">
+        <h2>River crossing puzzle</h2>
+        <img id="river" src="./images/recommendations/river-crossing.svg"
+             alt="Image of river crossing puzzle game" width="250">
+        <p>A wildfire rages through the forest, help the lions and bulls escape while keeping all of
+          the bulls safe from the lions.</p>
+      </section>
+    </div>
+  </main>
+
+  <!--Footer template on all pages-->
+  <footer>
+    <a href="/com1008">
+      <img id="footer_logo" src="./images/logo/logo_word.svg" alt="Footer logo: puzzlity" width="120">
+    </a>
+
+    <ul class="footer_nav">
+      <li><a class="footer_link" href="news">News</a></li>
+      <li><a class="footer_link" href="about">About Us</a></li>
+      <li><a class="footer_link" href="contact">Contact Us</a></li>
+      <li><a class="footer_link" href="accessibility">Accessibility</a></li>
+    </ul>
+
+    <h4 id="footer_copyright">&copy; Zer Jun ENG, Web Assignment, 2016</h4>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Written by Zer Jun Eng-->
+  <meta charset="utf-8">
+  <meta name="author" content="Zer Jun Eng">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Puzzlity - About Us</title>
+  <!--Link Google Roboto font, a favicon and stylesheets-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="icon" href="./images/logo/logo_globe.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/accessibility.css">
+
+  <script defer src="./javascript/menu.js"></script>
+</head>
+
+<body>
+  <!--This div element is the dark overlay when the menu is open-->
+  <div id="mobile_menu_overlay"></div>
+
+  <header>
+    <!--Logo to be shown on mobile platform-->
+    <div id="mobile_logo">
+      <a href="/com1008">
+        <img src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity" height="120" width="120">
+      </a>
+    </div>
+
+    <button type="button" id="mobile_menu_button" onClick="openMenu()">
+      <img src="./images/menu_icon/menu.svg" alt="Hamburger menu icon" height="20" width="20">Menu
+    </button>
+
+    <!--Off-canvas menu on mobile display-->
+    <nav id="mobile_menu">
+      <a href="javascript:void(0)" id="close_button" onclick="closeMenu()">&times;</a>
+      <ul>
+        <!--Credit: all the menu icons are free licenses from flaticon.com. Edited using Adobe Illustrator.-->
+        <li>
+          <a href="/com1008">
+            <img class="menu_icon" src="./images/menu_icon/home.svg" alt="Home icon" height="25" width="25">Home
+          </a>
+        </li>
+        <li>
+          <a href="recommendations">
+            <img class="menu_icon" src="./images/menu_icon/star.svg" alt="Star icon" height="25" width="25">Recommendations
+          </a>
+        </li>
+        <li>
+          <a href="puzzles">
+            <img class="menu_icon" src="./images/menu_icon/puzzle.svg" alt="Puzzle icon" height="25" width="25">Puzzlity!
+          </a>
+        </li>
+        <li>
+          <a href="news">
+            <img class="menu_icon" src="./images/menu_icon/news.svg" alt="News icon" height="25" width="25">News
+          </a>
+        </li>
+        <li>
+          <a href="about">
+            <img class="menu_icon" src="./images/menu_icon/about.svg" alt="About icon" height="25" width="25">About Us
+          </a>
+        </li>
+        <li>
+          <a href="contact">
+            <img class="menu_icon" src="./images/menu_icon/contact.svg" alt="Contact icon" height="25" width="25">Contact Us
+          </a>
+        </li>
+        <li>
+          <a href="accessibility">
+            <img class="menu_icon" src="./images/menu_icon/accessibility.svg" alt="Accessibility icon" height="25" width="25">Accessibility
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--Horizontal menu bar on desktop display-->
+    <nav id="desktop_menu">
+      <table>
+        <!--Credit: all the vector menu icons are free license from flaticon.com. Edited using Adobe Illustrator.-->
+        <tr>
+          <td class="logo_box">
+            <a id="desktop_logo" href="/com1008">
+              <img id="full" src="./images/logo/logo_full.svg" alt="Main Logo of Puzzlity" height="95" width="95">
+              <img id="globe" src="./images/logo/logo_globe.svg" alt="Main Logo of Puzzlity" height="50" width="50">
+              <img id="word" src="./images/logo/logo_word.svg" alt="Main Logo of Puzzlity" height="51" width="87">
+            </a>
+          </td>
+          <td>
+            <a href="/com1008">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/home.svg" alt="Home icon" height="40" width="40">
+                <span class="desc"><br>Home</span>
+              </span>
+            </a>
+          </td>
+          <td class="longer">
+            <a href="recommendations">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/star.svg" alt="Star icon" height="40" width="40">
+                <span class="desc"><br>Recommendations</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="puzzles">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/puzzle.svg" alt="Puzzle icon" height="40" width="40">
+                <span class="desc"><br>Puzzlity!</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="news">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/news.svg" alt="News icon" height="40" width="40">
+                <span class="desc"><br>News</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="about">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/about.svg" alt="About icon" height="40" width="40">
+                <span class="desc"><br>About Us</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="contact">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/contact.svg" alt="Contact icon" height="40" width="40">
+                <span class="desc"><br>Contact Us</span>
+              </span>
+            </a>
+          </td>
+          <td>
+            <a href="accessibility">
+              <span class="vertical_align">
+                <img class="menu_icon" src="./images/menu_icon/accessibility.svg" alt="Accessibility icon" height="40" width="40">
+                <span class="desc"><br>Accessibility</span>
+              </span>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </nav>
+  </header>
+
+  <!--Push the main content down so it won't be blocked by the fixed horizontal desktop menu-->
+  <div id="space"></div>
+
+  <main>
+    <section>
+      <h1>Accessibility Statement</h1>
+      <p>Puzzlity is fully commited to making our website accessible and usable by all visitors with
+        or without disabilities.
+      <p>
+      <p>We are actively working on increasing the accessibility and usability of our website to
+        enhance our visitors experience.</p>
+
+      <hr>
+
+      <h1>Our commitment to Accessibility</h1>
+      <p>We aim to create a positive environment that enables everyone to fully experience in the
+        services we provide.</p>
+      <p>The Puzzlity team strives to comply to at least Level AA of the <a
+          href="https://www.w3.org/TR/WCAG20/">Web Content Accessibility Guidelines 2.0</a>.
+        We have followed these guidelines during the development process of the website to provide a
+        more user-friendly interface for all visitors.
+      </p>
+      <p>The Puzzlity website is built using HTML, CSS and Javascript. As part of the website
+        development process, our team has used several tools to test the web pages for accessibility
+        issues. We have used
+        <a href="http://www.color-blindness.com/coblis-color-blindness-simulator/">Colour Blindness
+          Simulator</a> to test all of the images to ensure that they are suitable for
+        colour blind people. Our team also uses <a href="https://validator.w3.org/">W3C Markup
+          Validation Service</a> to check the validity of our web documents and <a
+            href="http://contrastchecker.com/">Contrast Checker</a>
+        to provide the best experience possible for all visitors.
+      </p>
+
+      <hr>
+
+      <h1>Having Difficulties?</h1>
+      <p>We have worked hard on the Puzzlity website to achieve the Level AA conformance to WCAG 2.0.
+        This site is regularly monitored to ensure that it meets and exceeds
+        the standards.
+      </p>
+      <p>If you are having difficulties accessing the content of this site, please do not hesitate to
+        <a href="contact">contact us</a> for further assitance.</p>
+      <a id="contactButton" href="contact">Contact Us</a>
+    </section>
+  </main>
+
+  <!--Footer template on all pages-->
+  <footer>
+    <a href="/com1008">
+      <img id="footer_logo" src="./images/logo/logo_word.svg" alt="Footer logo: puzzlity" width="120">
+    </a>
+
+    <ul class="footer_nav">
+      <li><a class="footer_link" href="news">News</a></li>
+      <li><a class="footer_link" href="about">About Us</a></li>
+      <li><a class="footer_link" href="contact">Contact Us</a></li>
+      <li><a class="footer_link" href="accessibility">Accessibility</a></li>
+    </ul>
+
+    <h4 id="footer_copyright">&copy; Zer Jun ENG, Web Assignment, 2016</h4>
+  </footer>
+</body>
+
+</html>

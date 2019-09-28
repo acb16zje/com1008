@@ -318,13 +318,13 @@ let tileOrder = [1, 2, 3, 4, 5, 6, 7, 8, 0];
 /* Images */
 let images = [];
 images[0] = new Image();
-images[0].src = "../images/puzzles/sliding1.png";
+images[0].src = "./images/puzzles/sliding1.png";
 
 images[1] = new Image();
-images[1].src = "../images/puzzles/sliding2.png";
+images[1].src = "./images/puzzles/sliding2.png";
 
 images[2] = new Image();
-images[2].src = "../images/puzzles/sliding3.png";
+images[2].src = "./images/puzzles/sliding3.png";
 
 /* 2D array for puzzle game */
 let board = new Array(3);
